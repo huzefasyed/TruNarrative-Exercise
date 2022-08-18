@@ -7,6 +7,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+
 public class JSONHelper {
     public CompanyDTO[] jsonResponseToCompanies(String rawJson) throws JSONException {
         JSONObject rawJsonObj = new JSONObject(rawJson);
@@ -50,12 +52,12 @@ public class JSONHelper {
         if (items == null) {
             return new OfficerDTO[0];
         }
-        OfficerDTO[] officers = new OfficerDTO[items.length()];
+        ArrayList<OfficerDTO> officers = new ArrayList<>();
 
         for (int i = 0; i < items.length(); i++) {
             JSONObject obj = items.getJSONObject(i);
-            if (obj.optString("resigned_on") != null) continue;
 
+            if (obj.optString("resigned_on",null) != null) continue;
             OfficerDTO officerDTO = new OfficerDTO();
             officerDTO.setName(obj.optString("name", ""));
             officerDTO.setOfficer_role(obj.optString("officer_role", ""));
@@ -69,8 +71,8 @@ public class JSONHelper {
             address.setPostal_code(adr.optString("postal_code", ""));
             address.setPremises(adr.optString("premises", ""));
             officerDTO.setAddress(address);
-            officers[i] = officerDTO;
+            officers.add(officerDTO);
         }
-        return officers;
+        return officers.toArray(new OfficerDTO[0]);
     }
 }
