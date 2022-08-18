@@ -54,6 +54,7 @@ public class JSONHelper {
 
         for (int i = 0; i < items.length(); i++) {
             JSONObject obj = items.getJSONObject(i);
+            if (obj.optString("resigned_on") != null) continue;
 
             OfficerDTO officerDTO = new OfficerDTO();
             officerDTO.setName(obj.optString("name", ""));
