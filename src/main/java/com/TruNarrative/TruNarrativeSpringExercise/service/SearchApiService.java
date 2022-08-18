@@ -12,7 +12,7 @@ import org.springframework.web.client.RestTemplate;
 
 @Service
 public class SearchApiService {
-    private final String API_KEY = "IoVV8jaWtJX5CRRIYqyR542r9Q2SzvU17XCDZun8";
+    private final String API_KEY = "";
     private final String BASE_API_URL = "https://exercise.trunarrative.cloud/TruProxyAPI/rest/Companies/v1";
 
     public ResponseEntity<ResponseDTO> searchCompany(RequestDTO requestDTO) throws JSONException {
