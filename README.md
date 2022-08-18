@@ -11,6 +11,7 @@
   "companyNumber": "06500244"
   }
   
+  However you must use your own api key provided.
   If both arugments are parsed then companyNumber is used else companyName is used.
   
 
