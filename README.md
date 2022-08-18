@@ -19,7 +19,7 @@
   The result of the search is returned as JSON - Yes
   A request parameter has to be added to decide whether only active companies should be returned - No
   The officers of each company have to be included in the company details (new field officers) - Yes
-  Only include officers that are active (resigned_on is not present in that case) - No
+  Only include officers that are active (resigned_on is not present in that case) - Yes
   Please add unit tests and integrations tests, e.g. using WireMock to mock TruProxyAPI calls - Yes
 
 - if i had time what i would've done different:
