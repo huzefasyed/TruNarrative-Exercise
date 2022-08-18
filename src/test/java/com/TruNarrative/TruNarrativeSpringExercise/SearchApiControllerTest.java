@@ -27,7 +27,7 @@ class SearchApiControllerTest {
 
 	final static String COMPANY_API_ENDPOINT = "https://exercise.trunarrative.cloud/TruProxyAPI/rest/Companies/v1/Search";
 	final static String OFFICERS_API_ENDPOINT = "https://exercise.trunarrative.cloud/TruProxyAPI/rest/Companies/v1/Officers";
-	final static String apiKey = "";
+	final static String API_KEY = "";
 
 
 	@Before
@@ -46,7 +46,7 @@ class SearchApiControllerTest {
 	public void testCompanyApiCall() throws Exception {
 		String url = "https://exercise.trunarrative.cloud/TruProxyAPI/rest/Companies/v1" + "/Search?Query=" + 06500244;
 		HttpHeaders headers = new HttpHeaders();
-		headers.add("x-api-key", apiKey);
+		headers.add("x-api-key", API_KEY);
 		HttpEntity<String> entity = new HttpEntity<String>(headers);
 
 		RestTemplate restTemplate = new RestTemplate();
@@ -58,7 +58,7 @@ class SearchApiControllerTest {
 	public void testOfficerApi() throws Exception {
 		String url = "https://exercise.trunarrative.cloud/TruProxyAPI/rest/Companies/v1/Officers?CompanyNumber=06500244";
 		HttpHeaders headers = new HttpHeaders();
-		headers.add("x-api-key", apiKey);
+		headers.add("x-api-key", API_KEY);
 		HttpEntity<String> entity = new HttpEntity<String>(headers);
 
 		RestTemplate restTemplate = new RestTemplate();
